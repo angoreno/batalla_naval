@@ -31,19 +31,46 @@ public class tablero {
 
 		switch (tipo) {
 		case "pa":
-			portaavion(a, b);
+			if (tab[a][b].equals("~") && tab[a + 1][b].equals("~") && tab[a + 2][b].equals("~")
+					&& tab[a + 3][b].equals("~") && tab[a + 4][b].equals("~")) {
+				//asignacion de portaaviones al tablero
+				tab[a][b] = "P";
+				tab[a + 1][b] = "P";
+				tab[a + 2][b] = "P";
+				tab[a + 3][b] = "P";
+				tab[a + 4][b] = "P";
+			}
 			break;
 		case "ac":
-			acorazado(a, b);
+			if (tab[a][b].equals("~") && tab[a + 1][b].equals("~") && tab[a + 2][b].equals("~")
+					&& tab[a + 3][b].equals("~")) {
+				//asignacion de acorazado al tablero
+				tab[a][b] = "A";
+				tab[a + 1][b] = "A";
+				tab[a + 2][b] = "A";
+				tab[a + 3][b] = "A";
+			}
 			break;
 		case "bq":
-			buque(a, b);
+			if (tab[a][b].equals("~") && tab[a + 1][b].equals("~") && tab[a + 2][b].equals("~")) {
+				//asignacion de buque al tablero
+				tab[a][b] = "B";
+				tab[a + 1][b] = "B";
+				tab[a + 2][b] = "B";
+			}
 			break;
 		case "sm":
-			submarin(a, b);
+			if (tab[a][b].equals("~") && tab[a + 1][b].equals("~")) {
+				//asignacion de submarino al tablero
+				tab[a][b] = "S";
+				tab[a + 1][b] = "S";
+			}
 			break;
 		case "lc":
-			lancha(a,b);
+			if (tab[a][b].equals("~")) {
+				//asignacion de lancha al tablero
+				tab[a][b] = "L";
+			}
 			break;
 		}// fin switch
 
@@ -51,59 +78,8 @@ public class tablero {
 
 	}
 
-	// Asigna lancha a tablero
-	public void lancha(int a, int b) {
-
-		if (tab[a][b].equals("~")) {
-			tab[a][b] = "L";
-		}
-	}
-
-	// Asigna submarino a tablero
-	public void submarin(int a, int b) {
-
-		if (tab[a][b].equals("~") && tab[a + 1][b].equals("~")) {
-			tab[a][b] = "S";
-			tab[a + 1][b] = "S";
-		}
-	}
-
-	// Asigna buque a tablero
-	public void buque(int a, int b) {
-
-		if (tab[a][b].equals("~") && tab[a + 1][b].equals("~") && tab[a + 2][b].equals("~")) {
-			tab[a][b] = "B";
-			tab[a + 1][b] = "B";
-			tab[a + 2][b] = "B";
-		}
-	}
-
-	//Asigna acorazado a tablero
-	public void acorazado(int a, int b) {
-
-		if (tab[a][b].equals("~") && tab[a + 1][b].equals("~") && tab[a + 2][b].equals("~")
-				&& tab[a + 3][b].equals("~")) {
-			tab[a][b] = "A";
-			tab[a + 1][b] = "A";
-			tab[a + 2][b] = "A";
-			tab[a + 3][b] = "A";
-		}
-	}
-	//asigna portaaviones a tablero
-	public void portaavion(int a, int b) {
-
-		if (tab[a][b].equals("~") && tab[a + 1][b].equals("~") && tab[a + 2][b].equals("~") 
-				&& tab[a + 3][b].equals("~")&& tab[a + 4][b].equals("~")) {
-
-			tab[a][b] = "P";
-			tab[a + 1][b] = "P";
-			tab[a + 2][b] = "P";
-			tab[a + 3][b] = "P";
-			tab[a + 4][b] = "P";
-		}
-	}
-	//entrega tabla para el guardado por jugador
-	public String [][] save_tab(){
+	// entrega tabla para el guardado por jugador
+	public String[][] save_tab() {
 		return tab;
 	}
 

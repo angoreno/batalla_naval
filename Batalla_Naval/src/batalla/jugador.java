@@ -36,10 +36,12 @@ public class jugador {
 				System.out.println("*******************************************");
 				System.out.println("Ingrese nombre del Jugador " + i + ":");
 				this.jug1 = leo.next();
+				this.jug1=jug1.toUpperCase();
 			} else if (i == 2) {
 				System.out.println("*******************************************");
 				System.out.println("Ingrese nombre del Jugador " + i + ":");
 				this.jug2 = leo.next();
+				this.jug2=jug2.toUpperCase();
 			}
 		}
 	}
